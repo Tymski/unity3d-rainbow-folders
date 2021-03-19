@@ -11,6 +11,9 @@
     "project",
     "editor"
   ],
+  "author": {
+    "name": "Tymski",
+  },
   "samples": [
     {
       "displayName": "Demo scenes recursive",
