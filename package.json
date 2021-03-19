@@ -1,5 +1,5 @@
 {
-  "name": "com.teamon.rainbowfolders",
+  "name": "com.tymski.rainbowfolders",
   "version": "1.0.1",
   "displayName": "Rainbow Folders",
   "description": "This asset allows you to set custom icons for any folder in unity project browser",
@@ -11,11 +11,6 @@
     "project",
     "editor"
   ],
-  "author": {
-    "name": "Team",
-    "email": "timonsol13@gmail.com",
-    "url": "https://github.com/Team-on"
-  },
   "samples": [
     {
       "displayName": "Demo scenes recursive",
