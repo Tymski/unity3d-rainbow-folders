@@ -1,8 +1,8 @@
-# Discontinued
+# Development
 
-This project is discontinued and deprecated. Unfortunately, our benefit from the open source project was too low to justify the extra effort to keep it alive.
+The original developers of this asset no-longer maintain it (though the open source community does)
 
-Meanwhile, development continues and new versions of the Rainbow Folders are now available exclusively on the [Asset Store](http://u3d.as/mor)
+They moved onto developing a new version of Rainbow Folders exclusviely on the [Asset Store](https://assetstore.unity.com/packages/tools/utilities/rainbow-folders-2-143526)
 
 Now back to original README content…
 
@@ -42,7 +42,7 @@ Once the Importing dialog appears, just click the Import button.
 ## Installation through Unity-Package-Manager (2019.2+)
  * MenuItem - Window - Package Manager
  * Add package from git url
- * paste https://github.com/Team-on/unity3d-rainbow-folders.git#master
+ * paste https://github.com/Invertex/unity3d-rainbow-folders.git#master
 
 ## Folder location
 
