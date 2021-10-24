@@ -125,7 +125,7 @@ namespace Borodar.RainbowFolders.Editor
 
         public static T LoadFromPackages<T>(string relativePath) where T : UnityEngine.Object
         {
-            var assetPath = Path.Combine("Packages/com.teamon.rainbowfolders/", relativePath);
+            var assetPath = Path.Combine("Packages/com.opensource.rainbowfolders/", relativePath);
             var asset = AssetDatabase.LoadAssetAtPath<T>(assetPath);
 
             if (!asset) {
