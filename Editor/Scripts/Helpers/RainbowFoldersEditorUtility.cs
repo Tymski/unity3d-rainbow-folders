@@ -122,12 +122,25 @@ namespace Borodar.RainbowFolders.Editor
 
             return asset;
         }
+        private static string GetPackagePath()
+        {
+            var packages = UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages();
+
+            foreach (var package in packages)
+            {
+                if (package.name.EndsWith(".rainbowfolders"))
+                {
+                    return package.assetPath;
+                }
+            }
+            return "";
+        }
 
         public static T LoadFromPackages<T>(string relativePath) where T : UnityEngine.Object
         {
-            var assetPath = Path.Combine("Packages/com.opensource.rainbowfolders/", relativePath);
+            var assetPath = Path.Combine(GetPackagePath(), relativePath);
             var asset = AssetDatabase.LoadAssetAtPath<T>(assetPath);
-
+            
             if (!asset) {
                 return null;
             }
