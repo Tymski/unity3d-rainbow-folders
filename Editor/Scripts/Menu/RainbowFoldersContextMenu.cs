@@ -92,7 +92,7 @@ namespace Borodar.RainbowFolders.Editor
         // Menu Items
         //---------------------------------------------------------------------
 
-        // [MenuItem(ITEM_CUSTOM, false, 0)]
+        [MenuItem(ITEM_CUSTOM, false, 90)]
         public static void ApplyCustom()
         {
             var window = RainbowFoldersPopup.GetDraggableWindow();
@@ -101,20 +101,20 @@ namespace Borodar.RainbowFolders.Editor
             window.ShowWithParams(position, paths.ToList(), 0);
         }
 
-        // [MenuItem(ITEM_DEFAULT, false, 0)]
+        [MenuItem(ITEM_DEFAULT, false, 90)]
         public static void RevertToDefault()
         {
             RevertSelectedFoldersToDefault();
         }
 
-        // [MenuItem(ITEM_SETTINGS, false, 2000)]
+        [MenuItem(ITEM_SETTINGS, false, 2000)]
         public static void OpenSettings()
         {
             Selection.activeObject = RainbowFoldersSettings.Instance;
         }
 
-        // [MenuItem(ITEM_CUSTOM, true)]
-        // [MenuItem(ITEM_DEFAULT, true)]
+        [MenuItem(ITEM_CUSTOM, true)]
+        [MenuItem(ITEM_DEFAULT, true)]
         public static bool IsValidFolder()
         {
             var hasValidFolder = false;
@@ -130,103 +130,103 @@ namespace Borodar.RainbowFolders.Editor
 
         // Colors
 
-        // [MenuItem(COLOR_RED)]
+        [MenuItem(COLOR_RED)]
         public static void Red() { Colorize(FolderColorName.Red); }
-        // [MenuItem(COLOR_VERMILION)]
+        [MenuItem(COLOR_VERMILION)]
         public static void Vermilion() { Colorize(FolderColorName.Vermilion); }
-        // [MenuItem(COLOR_ORANGE)]
+        [MenuItem(COLOR_ORANGE)]
         public static void Orange() { Colorize(FolderColorName.Orange); }
-        // [MenuItem(COLOR_YELLOW_ORANGE)]
+        [MenuItem(COLOR_YELLOW_ORANGE)]
         public static void YellowOrange() { Colorize(FolderColorName.YellowOrange); }
-        // [MenuItem(COLOR_YELLOW)]
+        [MenuItem(COLOR_YELLOW)]
         public static void Yellow() { Colorize(FolderColorName.Yellow); }
-        // [MenuItem(COLOR_LIME)]
+        [MenuItem(COLOR_LIME)]
         public static void Lime() { Colorize(FolderColorName.Lime); }
-        // [MenuItem(COLOR_GREEN)]
+        [MenuItem(COLOR_GREEN)]
         public static void Green() { Colorize(FolderColorName.Green); }
-        // [MenuItem(COLOR_BONDI_BLUE)]
+        [MenuItem(COLOR_BONDI_BLUE)]
         public static void BondiBlue() { Colorize(FolderColorName.BondiBlue); }
-        // [MenuItem(COLOR_BLUE)]
+        [MenuItem(COLOR_BLUE)]
         public static void Blue() { Colorize(FolderColorName.Blue); }
-        // [MenuItem(COLOR_INDIGO)]
+        [MenuItem(COLOR_INDIGO)]
         public static void Indigo() { Colorize(FolderColorName.Indigo); }
-        // [MenuItem(COLOR_VIOLET)]
+        [MenuItem(COLOR_VIOLET)]
         public static void Violet() { Colorize(FolderColorName.Violet); }
-        // [MenuItem(COLOR_MAGENTA)]
+        [MenuItem(COLOR_MAGENTA)]
         public static void Magenta() { Colorize(FolderColorName.Magenta); }
 
         // Tags
 
-        // [MenuItem(TAG_RED)]
+        [MenuItem(TAG_RED)]
         public static void TagRed() { AssignTag(FolderTagName.Red); }
-        // [MenuItem(TAG_VERMILION)]
+        [MenuItem(TAG_VERMILION)]
         public static void TagVermilion() { AssignTag(FolderTagName.Vermilion); }
-        // [MenuItem(TAG_ORANGE)]
+        [MenuItem(TAG_ORANGE)]
         public static void TagOrange() { AssignTag(FolderTagName.Orange); }
-        // [MenuItem(TAG_YELLOW_ORANGE)]
+        [MenuItem(TAG_YELLOW_ORANGE)]
         public static void TagYellowOrange() { AssignTag(FolderTagName.YellowOrange); }
-        // [MenuItem(TAG_YELLOW)]
+        [MenuItem(TAG_YELLOW)]
         public static void TagYellow() { AssignTag(FolderTagName.Yellow); }
-        // [MenuItem(TAG_LIME)]
+        [MenuItem(TAG_LIME)]
         public static void TagLime() { AssignTag(FolderTagName.Lime); }
-        // [MenuItem(TAG_GREEN)]
+        [MenuItem(TAG_GREEN)]
         public static void TagGreen() { AssignTag(FolderTagName.Green); }
-        // [MenuItem(TAG_CYAN)]
+        [MenuItem(TAG_CYAN)]
         public static void TagCyan() { AssignTag(FolderTagName.Cyan); }
-        // [MenuItem(TAG_BLUE)]
+        [MenuItem(TAG_BLUE)]
         public static void TagBlue() { AssignTag(FolderTagName.Blue); }
-        // [MenuItem(TAG_DARK_BLUE)]
+        [MenuItem(TAG_DARK_BLUE)]
         public static void TagDarkBlue() { AssignTag(FolderTagName.DarkBlue); }
-        // [MenuItem(TAG_VIOLET)]
+        [MenuItem(TAG_VIOLET)]
         public static void TagViolet() { AssignTag(FolderTagName.Violet); }
-        // [MenuItem(TAG_MAGENTA)]
+        [MenuItem(TAG_MAGENTA)]
         public static void TagMagenta() { AssignTag(FolderTagName.Magenta); }
 
         // Types
 
-        // [MenuItem(TYPE_AUDIO)]
+        [MenuItem(TYPE_AUDIO)]
         public static void TypeAudio() { AssingType(FolderTypeName.Audio); }
-        // [MenuItem(TYPE_BRACKETS)]
+        [MenuItem(TYPE_BRACKETS)]
         public static void TypeBrackets() { AssingType(FolderTypeName.Brackets); }
-        // [MenuItem(TYPE_EDITOR)]
+        [MenuItem(TYPE_EDITOR)]
         public static void TypeEditor() { AssingType(FolderTypeName.Editor); }
-        // [MenuItem(TYPE_EXTENSIONS)]
+        [MenuItem(TYPE_EXTENSIONS)]
         public static void TypeExtensions() { AssingType(FolderTypeName.Extensions); }
-        // [MenuItem(TYPE_FONTS)]
+        [MenuItem(TYPE_FONTS)]
         public static void TypeFonts() { AssingType(FolderTypeName.Fonts); }
-        // [MenuItem(TYPE_MATERIALS)]
+        [MenuItem(TYPE_MATERIALS)]
         public static void TypeMaterials() { AssingType(FolderTypeName.Materials); }
-        // [MenuItem(TYPE_MESHES)]
+        [MenuItem(TYPE_MESHES)]
         public static void TypeMeshes() { AssingType(FolderTypeName.Meshes); }
-        // [MenuItem(TYPE_PLUGINS)]
+        [MenuItem(TYPE_PLUGINS)]
         public static void TypePlugins() { AssingType(FolderTypeName.Plugins); }
-        // [MenuItem(TYPE_PREFABS)]
+        [MenuItem(TYPE_PREFABS)]
         public static void TypePrefabs() { AssingType(FolderTypeName.Prefabs); }
-        // [MenuItem(TYPE_RAINBOW)]
+        [MenuItem(TYPE_RAINBOW)]
         public static void TypeRainbow() { AssingType(FolderTypeName.Rainbow); }
-        // [MenuItem(TYPE_RESOURCES)]
+        [MenuItem(TYPE_RESOURCES)]
         public static void TypeResources() { AssingType(FolderTypeName.Resources); }
-        // [MenuItem(TYPE_SCENES)]
+        [MenuItem(TYPE_SCENES)]
         public static void TypeScenes() { AssingType(FolderTypeName.Scenes); }
-        // [MenuItem(TYPE_SCRIPTS)]
+        [MenuItem(TYPE_SCRIPTS)]
         public static void TypeScripts() { AssingType(FolderTypeName.Scripts); }
-        // [MenuItem(TYPE_SHADERS)]
+        [MenuItem(TYPE_SHADERS)]
         public static void TypeShaders() { AssingType(FolderTypeName.Shaders); }
-        // [MenuItem(TYPE_TERRAINS)]
+        [MenuItem(TYPE_TERRAINS)]
         public static void TypeTerrains() { AssingType(FolderTypeName.Terrains); }
-        // [MenuItem(TYPE_TEXTURES)]
+        [MenuItem(TYPE_TEXTURES)]
         public static void TypeTextures() { AssingType(FolderTypeName.Textures); }
 
         // Platforms
-        // [MenuItem(PLATFORM_ANDROID)]
+        [MenuItem(PLATFORM_ANDROID)]
         public static void PlatformAndroid() { AssingPlatform(FolderPlatformName.Android); }
-        // [MenuItem(PLATFORM_IOS)]
+        [MenuItem(PLATFORM_IOS)]
         public static void PlatformiOS() { AssingPlatform(FolderPlatformName.iOS); }
-        // [MenuItem(PLATFORM_MAC)]
+        [MenuItem(PLATFORM_MAC)]
         public static void PlatformMac() { AssingPlatform(FolderPlatformName.Mac); }
-        // [MenuItem(PLATFORM_WEBGL)]
+        [MenuItem(PLATFORM_WEBGL)]
         public static void PlatformWebGL() { AssingPlatform(FolderPlatformName.WebGL); }
-        // [MenuItem(PLATFORM_WINDOWS)]
+        [MenuItem(PLATFORM_WINDOWS)]
         public static void PlatformWindows() { AssingPlatform(FolderPlatformName.Windows); }
 
         //---------------------------------------------------------------------
