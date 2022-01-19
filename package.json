@@ -1,6 +1,6 @@
 {
-  "name": "com.tymski.rainbowfolders",
-  "version": "1.0.1",
+  "name": "com.opensource.rainbowfolders",
+  "version": "1.0.3",
   "displayName": "Rainbow Folders",
   "description": "This asset allows you to set custom icons for any folder in unity project browser",
   "unity": "2018.1",
@@ -12,7 +12,7 @@
     "editor"
   ],
   "author": {
-    "name": "Tymski"
+    "name": "Open Source"
   },
   "samples": [
     {
