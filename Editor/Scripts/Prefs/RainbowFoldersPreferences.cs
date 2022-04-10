@@ -42,8 +42,25 @@ namespace Borodar.RainbowFolders.Editor
         //---------------------------------------------------------------------
         // Messages
         //---------------------------------------------------------------------
+        #if UNITY_2018_3_OR_NEWER
+        private class RainbowFoldersSettingsProvider : SettingsProvider
+        {
+            public RainbowFoldersSettingsProvider(string path, SettingsScope scopes = SettingsScope.User): base(path, scopes) { }
 
+            public override void OnGUI(string searchContext)
+            {
+                EditorPreferences();
+            }
+        }
+      
+        [SettingsProvider]
+        static SettingsProvider RainbowFoldersPrefsEntry()
+        {
+            return new RainbowFoldersSettingsProvider("Preferences/Raindbow Folders");
+        }
+#else
         [PreferenceItem("Rainbow Folders")]
+#endif
         public static void EditorPreferences()
         {
             EditorGUILayout.Separator();
