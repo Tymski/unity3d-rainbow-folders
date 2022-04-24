@@ -91,24 +91,29 @@ namespace Borodar.RainbowFolders.Editor
             var assetPath = Path.Combine("Assets/", relativePath);
             var asset = AssetDatabase.LoadAssetAtPath<T>(assetPath);
 
-            if (!asset) {
+            if (!asset)
+            {
                 string name = typeof(T).Name;
                 string guid = AssetDatabase.FindAssets($"{name}")[0];
                 string originalAssetPath = AssetDatabase.GUIDToAssetPath(guid);
                 asset = AssetDatabase.LoadAssetAtPath<T>(originalAssetPath);
 
-                if (name == "RainbowFoldersSettings") {
+                if (name == "RainbowFoldersSettings")
+                {
                     Settings.RainbowFoldersSettings originalData = asset as Settings.RainbowFoldersSettings;
                     Settings.RainbowFoldersSettings newData = ScriptableObject.CreateInstance(typeof(T)) as Settings.RainbowFoldersSettings;
                     newData.Folders = new System.Collections.Generic.List<Settings.RainbowFolder>(originalData.Folders.Count);
-                    for(int i = 0; i < originalData.Folders.Count; ++i) {
+                    for (int i = 0; i < originalData.Folders.Count; ++i)
+                    {
                         newData.Folders.Add(new Settings.RainbowFolder(originalData.Folders[i]));
                     }
 
                     string[] dirs = assetPath.Split('/');
                     string allPath = dirs[0];
-                    for(int i = 1; i < dirs.Length - 1; ++i) {
-						if (!AssetDatabase.IsValidFolder(allPath + "/" + dirs[i])) {
+                    for (int i = 1; i < dirs.Length - 1; ++i)
+                    {
+                        if (!AssetDatabase.IsValidFolder(allPath + "/" + dirs[i]))
+                        {
                             AssetDatabase.CreateFolder(allPath, dirs[i]);
                         }
                         allPath = allPath + "/" + dirs[i];
@@ -122,26 +127,32 @@ namespace Borodar.RainbowFolders.Editor
 
             return asset;
         }
+
         private static string GetPackagePath()
         {
+#if unity_2021_0_OR_NEWER
             var packages = UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages();
 
             foreach (var package in packages)
             {
-                if (package.name.EndsWith(".rainbowfolders"))
+            	if (package.name.EndsWith(".rainbowfolders"))
                 {
                     return package.assetPath;
                 }
             }
             return "";
+#else
+            return "Packages/com.opensource.rainbowfolders/";
+#endif
         }
 
         public static T LoadFromPackages<T>(string relativePath) where T : UnityEngine.Object
         {
             var assetPath = Path.Combine(GetPackagePath(), relativePath);
             var asset = AssetDatabase.LoadAssetAtPath<T>(assetPath);
-            
-            if (!asset) {
+
+            if (!asset)
+            {
                 return null;
             }
 
@@ -185,7 +196,7 @@ namespace Borodar.RainbowFolders.Editor
             return GetTexture(ref _assetLogo, "rainbow_logo_64.png");
         }
 
-        public static Texture2D GetCollabBackground(bool isSmall,bool isPro)
+        public static Texture2D GetCollabBackground(bool isSmall, bool isPro)
         {
             return isSmall
                 ? isPro
